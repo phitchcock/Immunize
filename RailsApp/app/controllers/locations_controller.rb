@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   def index
+    @locations = Location.all
   end
 
   def show
@@ -19,4 +20,15 @@ class LocationsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def location_params
+    params.require(:location).permit!
+  end
+
+  def set_location
+    @location = Location.find(params[:id])
+  end
+
 end
