@@ -15,7 +15,7 @@ class Location {
     var city: String!
     var state: String!
     var zip: String!
-    var date: NSDate?
+    var date: String?
     var time: String?
     var createdAt: String?
     var updatedAt: String?
