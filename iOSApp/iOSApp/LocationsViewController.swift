@@ -29,13 +29,10 @@ class LocationsViewController: UIViewController {
     }
 
     func getLocations() {
+
         Alamofire.request(.GET, "https://sac-immunize.herokuapp.com/api/v1/locations")
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-
+    
                 if let JSON = response.result.value {
                     self.locations.removeAll()
 
