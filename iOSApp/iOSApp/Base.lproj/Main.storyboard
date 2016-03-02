@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="75" id="1fP-ZF-dtO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="75" id="1fP-ZF-dtO" customClass="LocationTableViewCell" customModule="iOSApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1fP-ZF-dtO" id="j4e-B5-gz2">
@@ -51,7 +51,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73725490199999999" green="0.75294117650000003" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="cityLabel" destination="V8d-p9-17I" id="BRH-Ae-eK2"/>
+                                            <outlet property="nameLabel" destination="YLT-a3-13b" id="kG3-bb-XLj"/>
+                                            <outlet property="streetlabel" destination="ouo-jW-Ofv" id="F2A-hH-Vyy"/>
                                             <segue destination="I0K-BF-wTq" kind="presentation" identifier="locationSegue" modalPresentationStyle="overFullScreen" id="S1c-ku-hcN"/>
                                         </connections>
                                     </tableViewCell>
@@ -172,19 +176,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwX-TR-5Pn">
                                                 <rect key="frame" x="0.0" y="405" width="160" height="45"/>
                                                 <color key="backgroundColor" red="0.18823529411764706" green="0.6470588235294118" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Notify">
+                                                <state key="normal" title="NOTIFY">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoY-bL-hFF">
-                                                <rect key="frame" x="160" y="405" width="160" height="45"/>
-                                                <color key="backgroundColor" red="0.89803921568627454" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Ok">
-                                                    <color key="titleColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="popViewController:" destination="I0K-BF-wTq" eventType="touchUpInside" id="1ne-Pw-Yub"/>
-                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-on-Ayq">
                                                 <rect key="frame" x="0.0" y="348" width="320" height="2"/>
@@ -237,13 +231,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dCm-uJ-zKM">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dCm-uJ-zKM">
                                                 <rect key="frame" x="38" y="181" width="245" height="102"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoY-bL-hFF">
+                                                <rect key="frame" x="160" y="405" width="160" height="45"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="OK">
+                                                    <color key="titleColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="popViewController:" destination="I0K-BF-wTq" eventType="touchUpInside" id="1ne-Pw-Yub"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -256,7 +260,12 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="PIe-iF-Dfv"/>
                     <connections>
+                        <outlet property="cityLabel" destination="EAb-yF-Soy" id="LgA-iQ-Osk"/>
+                        <outlet property="infoTextArea" destination="dCm-uJ-zKM" id="2cf-2g-TVX"/>
                         <outlet property="mapView" destination="mjn-sY-Edf" id="fu9-Mf-LTk"/>
+                        <outlet property="nameLabel" destination="BnC-1Q-2hM" id="lmH-6e-Jgy"/>
+                        <outlet property="popupView" destination="KSQ-BE-5DL" id="syg-V2-hAT"/>
+                        <outlet property="streetLabel" destination="EEW-Vg-YAn" id="PCR-1T-vao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACT-5E-hOD" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,7 @@ class LocationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -78,8 +79,11 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = locations[indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! LocationTableViewCell
+        let locationCell = locations[indexPath.row]
+        cell.nameLabel.text = locationCell.name
+        cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
+        cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
         return cell
     }
 

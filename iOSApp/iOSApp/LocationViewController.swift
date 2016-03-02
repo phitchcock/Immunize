@@ -11,14 +11,40 @@ import MapKit
 
 class LocationViewController: UIViewController {
 
-    var location: Location!
+    var location: Location?
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var infoTextArea: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(location.name)
+        popupView.layer.cornerRadius = 10
+
+        if let location = location {
+            nameLabel.text = location.name
+            streetLabel.text = "\(location.streetNumber) \(location.streetName)"
+            cityLabel.text = "\(location.city) \(location.state) \(location.zip)"
+
+            let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
+            let geocoder = CLGeocoder()
+
+            geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+                if let placemark = placemarks![0] as? CLPlacemark {
+
+                    let location = CLLocationCoordinate2D(latitude: (placemark.location?.coordinate.latitude)!, longitude: (placemark.location?.coordinate.longitude)!)
+                    let span  =  MKCoordinateSpanMake(0.017, 0.017)
+                    let region = MKCoordinateRegion(center: location, span: span)
+
+                    self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+                    self.mapView.region = region
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
