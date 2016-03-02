@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationViewController: UIViewController {
 
     var location: Location!
+
+    @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +26,8 @@ class LocationViewController: UIViewController {
     }
     
 
+    @IBAction func popViewController(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
