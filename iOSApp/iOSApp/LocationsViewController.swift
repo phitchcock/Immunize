@@ -13,9 +13,15 @@ class LocationsViewController: UIViewController {
 
     var locations: [Location] = [Location]()
 
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        getLocations()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,11 +55,26 @@ class LocationsViewController: UIViewController {
 
                     }
                     print(self.locations.count)
+                    self.tableView.reloadData()
                 }
         }
 
     }
 
+
+}
+
+extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel?.text = locations[indexPath.row].name
+        return cell
+    }
 
 }
 
