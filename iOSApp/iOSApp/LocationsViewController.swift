@@ -42,6 +42,7 @@ class LocationsViewController: UIViewController {
                 print(response.result)   // result of response serialization
 
                 if let JSON = response.result.value {
+                    self.locations.removeAll()
 
                     let dict = JSON
 
@@ -59,6 +60,21 @@ class LocationsViewController: UIViewController {
                 }
         }
 
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "locationSegue" {
+
+            let dvc = segue.destinationViewController as! LocationViewController
+
+            if let row = tableView.indexPathForSelectedRow?.row {
+
+                let location = locations[row]
+
+                dvc.location = location
+
+            }
+        }
     }
 
 
