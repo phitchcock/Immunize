@@ -45,7 +45,50 @@ class LocationsViewController: UIViewController {
 
                     for a in ar {
 
-                        let location = Location(name: a["name"] as! String, streetNumber: a["street_number"] as! String, streetName: a["street_name"] as! String, city: a["city"] as! String, state: a["state"] as! String, zip: a["zip"] as! String)
+                        var name: String
+                        var streetNumber: String
+                        var streetName: String
+                        var city: String
+                        var state: String
+                        var zip: String
+
+                        if let nameJson = a["name"] {
+                            name = nameJson as! String
+                        } else {
+                            name = "ERROR"
+                        }
+
+                        if let streetNumberJson = a["street_number"] {
+                            streetNumber = streetNumberJson as! String
+                        } else {
+                            streetNumber = "ERROR"
+                        }
+
+                        if let streetNameJson = a["street_name"] {
+                            streetName = streetNameJson as! String
+                        } else {
+                            streetName = "ERROR"
+                        }
+
+                        if let cityJson = a["city"] {
+                            city = cityJson as! String
+                        } else {
+                            city = "ERROR"
+                        }
+
+                        if let stateJson = a["state"] {
+                            state = stateJson as! String
+                        } else {
+                            state = "ERROR"
+                        }
+
+                        if let zipJson = a["zip"] {
+                            zip = zipJson as! String
+                        } else {
+                            zip = "ERROR"
+                        }
+
+                        let location = Location(name: name, streetNumber: streetNumber, streetName: streetName, city: city, state: state, zip: zip)
 
                         self.locations.append(location)
 
