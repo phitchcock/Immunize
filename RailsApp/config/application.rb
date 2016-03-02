@@ -30,7 +30,7 @@ module RailsApp
     # config.i18n.default_locale = :de
 
     # Turn off assets generator
-    config.gererators.assets = false
+    config.generators.assets = false
     #
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
