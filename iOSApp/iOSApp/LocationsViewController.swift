@@ -17,7 +17,6 @@ class LocationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -26,11 +25,6 @@ class LocationsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func locations(sender: UIButton) {
-        getLocations()
     }
 
     func getLocations() {
@@ -55,7 +49,6 @@ class LocationsViewController: UIViewController {
                         self.locations.append(location)
 
                     }
-                    print(self.locations.count)
                     self.tableView.reloadData()
                 }
         }
@@ -76,8 +69,6 @@ class LocationsViewController: UIViewController {
             }
         }
     }
-
-
 }
 
 extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
