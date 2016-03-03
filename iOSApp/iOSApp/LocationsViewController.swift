@@ -138,6 +138,8 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = locationCell.name
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
+        cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2
+        cell.cellImageView.clipsToBounds = true
         return cell
     }
 

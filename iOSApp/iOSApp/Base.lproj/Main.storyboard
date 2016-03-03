@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--County of Sacramento-->
+        <!--Health and Human Services-->
         <scene sceneID="zhv-Cf-Y4z">
             <objects>
-                <viewController id="7zu-vc-dUZ" sceneMemberID="viewController">
+                <viewController id="7zu-vc-dUZ" customClass="LandingViewController" customModule="iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTs-4j-dV1"/>
                         <viewControllerLayoutGuide type="bottom" id="ok8-j3-tni"/>
@@ -18,48 +18,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-DZ-fnp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="or8-08-bjs">
-                                        <rect key="frame" x="20" y="421" width="335" height="45"/>
-                                        <color key="backgroundColor" red="0.14117647058823529" green="0.74117647058823533" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="20" y="561" width="335" height="45"/>
                                         <state key="normal" title="List of Locations"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="1cW-bV-bTr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA1-NW-Wf7">
-                                        <rect key="frame" x="20" y="474" width="335" height="45"/>
-                                        <color key="backgroundColor" red="0.36862745098039218" green="0.78431372549019607" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Map of Locations"/>
+                                        <rect key="frame" x="20" y="614" width="335" height="45"/>
+                                        <color key="backgroundColor" red="0.89803921568627454" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Map of Locations">
+                                            <color key="titleColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="LTG-Hz-lQl" kind="push" id="tMf-JJ-WbD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-up-22m">
-                                        <rect key="frame" x="20" y="527" width="335" height="45"/>
-                                        <color key="backgroundColor" red="0.48627450980392156" green="0.46666666666666667" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Info"/>
-                                        <connections>
-                                            <segue destination="OHR-so-r6H" kind="show" id="xoM-Cj-qoc"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="immunize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-wr-GkR">
+                                        <rect key="frame" x="120" y="72" width="135" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                        <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large_icon" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-91-XAI">
+                                        <rect key="frame" x="147" y="164" width="80" height="107"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locate a free flu shot clinic in Sacramento County" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-NW-k5p">
+                                        <rect key="frame" x="59" y="344" width="257" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.65490196078431373" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNk-pb-iF3">
-                                <rect key="frame" x="20" y="113" width="335" height="234"/>
-                                <string key="text">Welcome to Sacramento County Department of Health and Human Services
-Immunization Assistance Program</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.1960784314" green="0.65490196079999996" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="County of Sacramento" id="06a-se-TuZ">
+                    <navigationItem key="navigationItem" title="Health and Human Services" id="06a-se-TuZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="0XF-Aq-L2u"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="listLocationsButton" destination="or8-08-bjs" id="G2G-1W-UZl"/>
+                        <outlet property="mapLocationsButton" destination="FA1-NW-Wf7" id="obM-MS-85h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tk6-re-JGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,11 +88,11 @@ Immunization Assistance Program</string>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="75" id="1fP-ZF-dtO" customClass="LocationTableViewCell" customModule="iOSApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="75" id="1fP-ZF-dtO" customClass="LocationTableViewCell" customModule="iOSApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1fP-ZF-dtO" id="j4e-B5-gz2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sac" translatesAutoresizingMaskIntoConstraints="NO" id="iU9-gw-OJ3">
@@ -101,19 +106,20 @@ Immunization Assistance Program</string>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouo-jW-Ofv">
                                                     <rect key="frame" x="81" y="26" width="261" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8d-p9-17I">
                                                     <rect key="frame" x="81" y="45" width="261" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellImageView" destination="iU9-gw-OJ3" id="hTL-Ew-a9h"/>
                                             <outlet property="cityLabel" destination="V8d-p9-17I" id="BRH-Ae-eK2"/>
                                             <outlet property="nameLabel" destination="YLT-a3-13b" id="kG3-bb-XLj"/>
                                             <outlet property="streetlabel" destination="ouo-jW-Ofv" id="F2A-hH-Vyy"/>
@@ -137,7 +143,13 @@ Immunization Assistance Program</string>
                     </view>
                     <navigationItem key="navigationItem" title="Immunization Locations" id="lTW-Mt-SUm">
                         <barButtonItem key="backBarButtonItem" title=" " id="Pfp-nY-f1H"/>
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="iEL-f1-SRy">
+                            <connections>
+                                <segue destination="OHR-so-r6H" kind="show" id="5gk-bR-tDC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="ioM-WJ-rTP" id="TsK-b8-2HF"/>
                     </connections>
@@ -175,6 +187,11 @@ Immunization Assistance Program</string>
                     </view>
                     <navigationItem key="navigationItem" title="Map of Locations" id="OVU-U8-bXE">
                         <barButtonItem key="backBarButtonItem" title=" " id="EmZ-5k-7lf"/>
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="BX8-gP-UGU">
+                            <connections>
+                                <segue destination="OHR-so-r6H" kind="show" id="Dcv-kI-Rkb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="vOb-M2-ONu" id="A0Y-cx-qhW"/>
@@ -261,7 +278,7 @@ Immunization Assistance Program</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="settings" id="kgZ-Vn-v4k">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Cp4-1E-hwl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Cp4-1E-hwl">
                                         <rect key="frame" x="0.0" y="348" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cp4-1E-hwl" id="xxA-7h-IEm">
@@ -405,13 +422,13 @@ Immunization Assistance Program</string>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="302-2y-Pvh">
                                                 <rect key="frame" x="30" y="313" width="94" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.73725490196078436" green="0.75294117647058822" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0W-ar-eTw">
                                                 <rect key="frame" x="32" y="366" width="94" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.73725490199999999" green="0.75294117650000003" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -432,7 +449,7 @@ Immunization Assistance Program</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sacramento, Ca 95835" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-yF-Soy">
                                                 <rect key="frame" x="8" y="152" width="304" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dCm-uJ-zKM">
@@ -454,7 +471,7 @@ Immunization Assistance Program</string>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 Whatever Street" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-Vg-YAn">
                                                 <rect key="frame" x="8" y="130" width="304" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -493,7 +510,7 @@ Immunization Assistance Program</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Xd-NO-XEj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16078431372549018" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.19607843137254902" green="0.65490196078431373" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -507,8 +524,13 @@ Immunization Assistance Program</string>
     </scenes>
     <resources>
         <image name="date" width="28" height="32"/>
+        <image name="large_icon" width="160" height="214"/>
         <image name="sac" width="176" height="143"/>
+        <image name="settings" width="28" height="28"/>
         <image name="time" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5gk-bR-tDC"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
