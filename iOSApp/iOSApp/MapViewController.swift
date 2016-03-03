@@ -109,7 +109,7 @@ class MapViewController: UIViewController {
                 if let placemark = placemarks![0] as? CLPlacemark {
 
                     let location = CLLocationCoordinate2D(latitude: 38.6249969, longitude: -121.3591972)
-                    let span  =  MKCoordinateSpanMake(0.7, 0.7)
+                    let span  =  MKCoordinateSpanMake(0.8, 0.8)
                     let region = MKCoordinateRegion(center: location, span: span)
 
                     self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
