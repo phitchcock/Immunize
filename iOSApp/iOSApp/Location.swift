@@ -15,12 +15,13 @@ class Location {
     var city: String!
     var state: String!
     var zip: String!
-    var date: String?
-    var time: String?
+    var date: String!
+    var time: String!
+    var info: String?
     var createdAt: String?
     var updatedAt: String?
 
-    init(name: String, streetNumber: String, streetName: String, city: String, state: String, zip: String) {
+    init(name: String, streetNumber: String, streetName: String, city: String, state: String, zip: String, date: String, time: String) {
 
         self.name = name
         self.streetNumber = streetNumber
@@ -28,6 +29,8 @@ class Location {
         self.city = city
         self.state = state
         self.zip = zip
+        self.date = date
+        self.time = time
     }
 
 }

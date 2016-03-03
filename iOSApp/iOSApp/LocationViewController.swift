@@ -19,6 +19,8 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var infoTextArea: UITextView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class LocationViewController: UIViewController {
             nameLabel.text = location.name
             streetLabel.text = "\(location.streetNumber) \(location.streetName)"
             cityLabel.text = "\(location.city) \(location.state) \(location.zip)"
+            dateLabel.text = location.date
+            timeLabel.text = location.time
 
             let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
             let geocoder = CLGeocoder()

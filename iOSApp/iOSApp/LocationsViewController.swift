@@ -48,6 +48,8 @@ class LocationsViewController: UIViewController {
                         var city: String
                         var state: String
                         var zip: String
+                        var date: String
+                        var time: String
 
                         if let nameJson = a["name"] {
                             name = nameJson as! String
@@ -85,7 +87,19 @@ class LocationsViewController: UIViewController {
                             zip = "ERROR"
                         }
 
-                        let location = Location(name: name, streetNumber: streetNumber, streetName: streetName, city: city, state: state, zip: zip)
+                        if let dateJson = a["date"] {
+                            date = dateJson as! String
+                        } else {
+                            date = "ERROR"
+                        }
+
+                        if let timeJson = a["time"] {
+                            time = timeJson as! String
+                        } else {
+                            time = "ERROR"
+                        }
+
+                        let location = Location(name: name, streetNumber: streetNumber, streetName: streetName, city: city, state: state, zip: zip, date: date, time: time)
 
                         self.locations.append(location)
 
