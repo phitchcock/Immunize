@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/create'
+
   root 'locations#index'
 
   resources :locations

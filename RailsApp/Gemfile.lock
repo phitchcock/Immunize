@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    ansi (1.5.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
@@ -103,6 +104,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    net-http-persistent (2.9.4)
     newrelic_rpm (3.15.0.314)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -159,6 +161,13 @@ GEM
       tilt
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rpush (2.7.0)
+      activesupport
+      ansi
+      multi_json (~> 1.0)
+      net-http-persistent
+      railties
+      thor (>= 0.18.1, < 2.0)
     rspec-core (3.4.3)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -238,6 +247,7 @@ DEPENDENCIES
   rails (= 4.2.5.2)
   rails_12factor
   react-rails
+  rpush
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -1,4 +1,6 @@
+ruby '2.3.0'
 source 'https://rubygems.org'
+
 
 gem 'rails', '4.2.5.2'
 gem 'sass-rails', '~> 5.0'
@@ -13,6 +15,7 @@ gem 'react-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "font-awesome-rails"
 gem 'dotenv'
+gem 'rpush'
 
 group :production do
   gem 'pg'
@@ -30,7 +33,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3' 
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
