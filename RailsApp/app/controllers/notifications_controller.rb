@@ -10,8 +10,8 @@ class NotificationsController < ApplicationController
     app.save!
 
     n = Rpush::Apns::Notification.new
-    n.app = Rpush::Apns::App.find_by_name("ios_app")
-    n.device_token = "" # 64-character hex string
+    n.app = Rpush::Apns::App.find_by_name("iOSApp")
+    n.device_token = "D3DFD081B9B311D145357B3CA433F472375E12CAE69283890BAFBC6EE5B54F29" # 64-character hex string
     n.alert = "hi mom!"
     n.data = { foo: :bar }
     n.save!
