@@ -85,6 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // display the userInfo
         if let notification = userInfo["aps"] as? NSDictionary,
             let alert = notification["alert"] as? String {
+                print(notification)
+                print(userInfo)
                 var alertCtrl = UIAlertController(title: "Time Entry", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
                 alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 // Find the presented VC...
