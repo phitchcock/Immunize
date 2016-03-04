@@ -4,6 +4,10 @@ class NotificationsController < ApplicationController
         @n = Rpush::Apns::Notification.all
     end
 
+    def new
+        n = Rpush::Apns::Notification.new
+    end
+
     def create
         # Create app first
         # app = Rpush::Apns::App.new
@@ -30,6 +34,8 @@ class NotificationsController < ApplicationController
         n.data = { data: params[:data] }
         if n.save
             redirect_to notifications_path
+        else
+            render :new
         end
     end
 
