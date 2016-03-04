@@ -19,7 +19,7 @@ class NotificationsController < ApplicationController
         n.app = Rpush::Apns::App.find_by_name("iOSApp")
         n.device_token = "D3DFD081B9B311D145357B3CA433F472375E12CAE69283890BAFBC6EE5B54F29" # 64-character hex string
         n.alert = params[:alert]
-        n.data = { foo: "pass data" }
+        n.data = { data: params[:data] }
         if n.save
             redirect_to notifications_path
         end

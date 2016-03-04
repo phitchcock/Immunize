@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let alert = notification["alert"] as? String {
                 print(notification)
                 print(userInfo)
-                var alertCtrl = UIAlertController(title: "Time Entry", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
+                var alertCtrl = UIAlertController(title: userInfo["data"] as! String, message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
                 alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 // Find the presented VC...
                 var presentedVC = self.window?.rootViewController
