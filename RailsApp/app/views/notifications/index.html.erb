@@ -1,1 +1,21 @@
-<h1>Notification Index</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div>
+        <h1 class="white">Notification Index</h1>
+        <h3 class=""><%= link_to 'New Notification', new_notification_path %></h3>
+          <% @n.each do |notify| %>
+            <div>
+              <p>
+                Alert: <%= notify.alert %>
+                Data: <%= notify.data %>
+                Delivered: <%= notify.delivered_at %>
+              </p>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

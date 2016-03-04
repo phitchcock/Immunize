@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+
+  before_action :set_location, only: [:show, :edit, :update, :destroy]
+
   def index
     @locations = Location.all
   end
@@ -7,6 +10,7 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @location = Location.new
   end
 
   def create
