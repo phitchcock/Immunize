@@ -21,6 +21,7 @@ class LocationsViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         getLocations()
     }
 

@@ -15,12 +15,7 @@ class LandingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
-        */
-
+    
         listLocationsButton.layer.cornerRadius = 5
         listLocationsButton.layer.borderWidth = 1
         listLocationsButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -29,8 +24,23 @@ class LandingViewController: UIViewController {
         //mapLocationsButton.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    @IBAction func unwindToLandingSegue(segue: UIStoryboardSegue) {
+        
     }
 
 }
