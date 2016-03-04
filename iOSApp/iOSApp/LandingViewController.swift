@@ -7,28 +7,27 @@
 //
 
 import UIKit
+import Spring
 
 class LandingViewController: UIViewController {
 
-    @IBOutlet weak var listLocationsButton: UIButton!
+    @IBOutlet weak var listLocationsButton: DesignableButton!
     @IBOutlet weak var mapLocationsButton: UIButton!
+    @IBOutlet weak var imageView: DesignableImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        listLocationsButton.layer.cornerRadius = 5
-        listLocationsButton.layer.borderWidth = 1
-        listLocationsButton.layer.borderColor = UIColor.whiteColor().CGColor
-        mapLocationsButton.layer.cornerRadius = 5
-        //mapLocationsButton.layer.borderWidth = 1
-        //mapLocationsButton.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
+
+        imageView.animation = "pop"
+        imageView.curve = "spring"
+        imageView.duration = 1.5
+        imageView.damping = 0.1
+        imageView.velocity = 0.2
+        imageView.animate()
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -40,7 +39,5 @@ class LandingViewController: UIViewController {
     }
 
     @IBAction func unwindToLandingSegue(segue: UIStoryboardSegue) {
-        
     }
-
 }
