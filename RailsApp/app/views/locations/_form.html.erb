@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= form_for(@location) do |f| %>
+  <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+</div>
+<div>
+  <%= f.submit class: "btn btn-primary btn-block" %>
+</div>
+<% end %>

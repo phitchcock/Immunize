@@ -2,20 +2,9 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <h1 class="white">Send Notification</h1>
-      <div>
-        <%= form_tag "/notifications" do %>
-        <%= label_tag 'Title' %>
-        <%= text_field_tag :data %>
-      </div>
-      <div>
-        <%= label_tag 'Notification' %>
-        <%= text_field_tag :alert %>
-      </div>
-      <div>
-        <%= submit_tag 'Send' %>
-      </div>
-      <% end %>
+      <h3 class="white">Send Notification</h3>
+      <hr>
+      <%= render 'form' %>
     </div>
     <div class="col-md-4"></div>
   </div>
