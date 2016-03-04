@@ -5,7 +5,7 @@
       <div>
         <h1 class="white">Notification Index</h1>
         <h3 class=""><%= link_to 'New Notification', new_notification_path %></h3>
-          <% @n.each do |notify| %>
+          <% @notifications.each do |notify| %>
             <div>
               <p>
                 Alert: <%= notify.alert %>

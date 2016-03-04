@@ -1,3 +1,3 @@
-class Notification < Rpush::Apns::Notification
-   validates_presence_of :alert
+class Notification < ActiveRecord::Base
+  validates :title, :message, presence: true
 end
