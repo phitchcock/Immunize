@@ -11,10 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304214618) do
+ActiveRecord::Schema.define(version: 20160304221406) do
 
-# Could not dump table "devices" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "devices", force: :cascade do |t|
+    t.string   "device_token", limit: 64
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
