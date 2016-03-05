@@ -33,6 +33,7 @@ class LocationViewController: UIViewController {
             cityLabel.text = "\(location.city) \(location.state) \(location.zip)"
             dateLabel.text = location.date
             timeLabel.text = location.time
+            infoTextArea.text = location.info
 
             let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
             let geocoder = CLGeocoder()

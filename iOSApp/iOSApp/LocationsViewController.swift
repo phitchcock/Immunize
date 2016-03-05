@@ -51,6 +51,7 @@ class LocationsViewController: UIViewController {
                         var zip: String
                         var date: String
                         var time: String
+                        var info: String
 
                         if let nameJson = a["name"] {
                             name = nameJson as! String
@@ -100,7 +101,14 @@ class LocationsViewController: UIViewController {
                             time = "ERROR"
                         }
 
+                        if let infoJson = a["info"] {
+                            info = infoJson as! String
+                        } else {
+                            info = "ERROR"
+                        }
+
                         let location = Location(name: name, streetNumber: streetNumber, streetName: streetName, city: city, state: state, zip: zip, date: date, time: time)
+                        location.info = info
 
                         self.locations.append(location)
 
