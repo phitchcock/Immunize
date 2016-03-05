@@ -1,9 +1,13 @@
 <div class="container">
-  <div class="row"> 
-    <div class="col-md-4"></div> 
+  <div class="row">
+    <div class="col-md-4"></div>
     <div class="col-md-4">
       <h1 class="white">immunize</h1>
-    </div> 
-    <div class="col-md-4"></div> 
+      <h3><%= link_to "New Location", new_location_path %></h3>
+      <% @locations.each do |location|%>
+        <p><%= link_to location.name, location %></p>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
   </div>
 </div>
