@@ -27,6 +27,11 @@ class LocationsController < ApplicationController
   end
 
   def update
+    if @location.update(location_params)
+      redirect_to locations_path
+    else
+      render :edit
+    end
   end
 
   def destroy
