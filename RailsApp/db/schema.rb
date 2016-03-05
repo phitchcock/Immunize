@@ -14,10 +14,13 @@
 ActiveRecord::Schema.define(version: 20160304221406) do
 
   create_table "devices", force: :cascade do |t|
-    t.string   "device_token", limit: 64
+    t.string   "device_token",    limit: 64
+    t.string   "registration_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "devices", ["registration_id"], name: "index_devices_on_registration_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
