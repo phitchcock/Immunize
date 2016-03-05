@@ -12,12 +12,19 @@ import Alamofire
 class LocationsViewController: UIViewController {
 
     var locations: [Location] = [Location]()
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        return refreshControl
+    }()
 
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        refreshControl.tintColor = UIColor.whiteColor()
+        tableView.addSubview(refreshControl)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -117,6 +124,13 @@ class LocationsViewController: UIViewController {
                 }
         }
 
+    }
+
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        getLocations()
+
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
