@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :users
-    resources :devices
     resources :locations
     resources :notifications
-
+    resources :users
+    resources :devices
+  
     root to: "locations#index"
   end
 
