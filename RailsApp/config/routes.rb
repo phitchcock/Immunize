@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+  root to: 'pages#home'
 
   devise_for :users
 
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :notifications
     resources :users
     resources :devices
-  
+
     root to: "locations#index"
   end
 
