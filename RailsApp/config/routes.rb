@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :locations, only: [:index]
-
   namespace :admin do
     resources :users
     resources :devices
