@@ -11,17 +11,18 @@ import Spring
 
 class LandingViewController: UIViewController {
 
+    // MARK: @IBOutlets
     @IBOutlet weak var listLocationsButton: DesignableButton!
     @IBOutlet weak var mapLocationsButton: UIButton!
     @IBOutlet weak var imageView: DesignableImageView!
 
+    // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-
         imageView.animation = "pop"
         imageView.curve = "spring"
         imageView.duration = 1.5

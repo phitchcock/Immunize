@@ -10,6 +10,7 @@ import UIKit
 
 class LocationTableViewCell: UITableViewCell {
 
+    // MARK: @IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var streetlabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -17,13 +18,9 @@ class LocationTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

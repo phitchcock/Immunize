@@ -11,6 +11,7 @@ import Alamofire
 
 class LocationsViewController: UIViewController {
 
+    // MARK: Properties
     var locations: [Location] = [Location]()
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -18,8 +19,10 @@ class LocationsViewController: UIViewController {
         return refreshControl
     }()
 
+    // MARK: @IBOutlets
     @IBOutlet var tableView: UITableView!
 
+    // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -36,6 +39,7 @@ class LocationsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // TODO: Move out of controller dup code
     func getLocations() {
 
         Alamofire.request(.GET, "https://sac-immunize.herokuapp.com/api/v1/locations")
@@ -50,6 +54,7 @@ class LocationsViewController: UIViewController {
 
                     for a in ar {
 
+                        // TODO: Potential crash if streetnumber != a numerical string need to check
                         var name: String
                         var streetNumber: String
                         var streetName: String
@@ -139,16 +144,14 @@ class LocationsViewController: UIViewController {
             let dvc = segue.destinationViewController as! LocationViewController
 
             if let row = tableView.indexPathForSelectedRow?.row {
-
                 let location = locations[row]
-
                 dvc.location = location
-
             }
         }
     }
 }
 
+// MARK: UITableView Extension
 extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

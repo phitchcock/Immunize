@@ -13,18 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().translucent = true
-
-
-
 
         initializeNotificationServices()
         return true
@@ -78,9 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "")
         deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "")
         deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "")
-
-        // Our API returns token in all uppercase, regardless how it was originally sent.
-        // To make the two consistent, I am uppercasing the token string here.
         deviceTokenStr = deviceTokenStr.uppercaseString
         print(deviceTokenStr)
         return deviceTokenStr

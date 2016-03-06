@@ -22,7 +22,6 @@ class Location {
     var updatedAt: String?
 
     init(name: String, streetNumber: String, streetName: String, city: String, state: String, zip: String, date: String, time: String) {
-
         self.name = name
         self.streetNumber = streetNumber
         self.streetName = streetName
@@ -32,5 +31,4 @@ class Location {
         self.date = date
         self.time = time
     }
-
 }

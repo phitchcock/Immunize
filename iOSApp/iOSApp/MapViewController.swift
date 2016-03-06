@@ -12,10 +12,13 @@ import Alamofire
 
 class MapViewController: UIViewController {
 
+    // MARK: Properties
     var locations: [Location] = [Location]()
 
+    // MARK: @IBOutlets
     @IBOutlet weak var mapView: MKMapView!
 
+    // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,6 +31,7 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // TODO: Move out of contrller dup code
     func getLocations() {
 
         Alamofire.request(.GET, "https://sac-immunize.herokuapp.com/api/v1/locations")
@@ -111,6 +115,7 @@ class MapViewController: UIViewController {
         
     }
 
+    // MARK: Geocode locations
     func reverseGeocodeLocations() {
         for location in locations {
 
@@ -132,6 +137,4 @@ class MapViewController: UIViewController {
             })
         }
     }
-
-    
 }
