@@ -19,6 +19,10 @@ module Admin
         end
     end
 
+    def notification_params
+        params.require(:notification).permit!
+    end
+
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
     #   Notification.find_by!(slug: param)
