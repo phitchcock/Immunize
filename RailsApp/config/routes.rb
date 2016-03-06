@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :locations
     resources :notifications
 
-    root to: "users#index"
+    root to: "locations#index"
   end
 
   namespace :api, defaults: { format: 'json' } do
