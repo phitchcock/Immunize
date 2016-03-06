@@ -16,6 +16,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "font-awesome-rails"
 gem 'dotenv'
 gem 'rpush'
+gem 'administrate', '~> 0.1.4'
 
 group :production do
   gem 'pg'
