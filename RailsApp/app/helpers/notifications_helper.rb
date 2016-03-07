@@ -1,9 +1,4 @@
 module NotificationsHelper
-
-  def all_notifications(notifications)
-    notifications = Rpush::Apns::Notification.all
-  end
-
   def send_notification(notification)
     Device.all.each do |d|
       n = Rpush::Apns::Notification.new

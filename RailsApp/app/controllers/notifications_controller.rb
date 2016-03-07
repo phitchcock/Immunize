@@ -6,9 +6,9 @@ class NotificationsController < ApplicationController
       @notifications = Rpush::Apns::Notification.all
   end
 
-  def new
-      @notification = Notification.new
-  end
+  # def new
+  #     @notification = Notification.new
+  # end
 
   # def create
   #   # Create app first
@@ -29,21 +29,21 @@ class NotificationsController < ApplicationController
   #   end
   # end
 
-  private
+  # private
 
-  def notification_params
-    params.require(:notification).permit!
-  end
-
-  # def send_notification(notification)
-  #   Device.all.each do |d|
-  #     n = Rpush::Apns::Notification.new
-  #     n.app = Rpush::Apns::App.find_by_name("iOSApp")
-  #     n.device_token = d.device_token #64-character hex string
-  #     n.alert = notification.message
-  #     n.data = { data: notification.title }
-  #     n.save!
-  #   end
+  # def notification_params
+  #   params.require(:notification).permit!
   # end
+
+  # # def send_notification(notification)
+  # #   Device.all.each do |d|
+  # #     n = Rpush::Apns::Notification.new
+  # #     n.app = Rpush::Apns::App.find_by_name("iOSApp")
+  # #     n.device_token = d.device_token #64-character hex string
+  # #     n.alert = notification.message
+  # #     n.data = { data: notification.title }
+  # #     n.save!
+  # #   end
+  # # end
 
 end

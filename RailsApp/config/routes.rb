@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :locations
     resources :notifications
     resources :users
-    resources :devices
+    resources :devices 
 
     root to: "locations#index"
   end
