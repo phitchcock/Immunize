@@ -1,10 +1,21 @@
+# == Schema Information
+#
+# Table name: notifications
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  message    :string
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class NotificationsController < ApplicationController
 
   before_action :authenticate_user!
 
-  def index
-      @notifications = Rpush::Apns::Notification.all
-  end
+  # def index
+  #     @notifications = Rpush::Apns::Notification.all
+  # end
 
   # def new
   #     @notification = Notification.new

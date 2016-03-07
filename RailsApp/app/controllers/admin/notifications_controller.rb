@@ -20,7 +20,7 @@ module Admin
             send_notification(@notification)
             redirect_to admin_notifications_path
         else
-          render :new
+            render :new
         end
     end
 
