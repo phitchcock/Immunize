@@ -1,5 +1,5 @@
-## Customize checkout
-checkout:
-  post:
-    - git submodule RailsApp
-    - git submodule update --init # use submodules
+deployment:
+  master:
+    branch: master
+    commands:
+      - git subtree push --prefix RailsApp heroku master
