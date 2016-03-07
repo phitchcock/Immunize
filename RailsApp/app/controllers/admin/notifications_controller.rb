@@ -1,8 +1,9 @@
 module Admin
   class NotificationsController < Admin::ApplicationController
 
-    include NotificationsHelper
-    include NotificationsWorker
+    #include NotificationsHelper
+    #include NotificationsWorker
+    
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
