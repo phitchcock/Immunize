@@ -15,8 +15,9 @@ module Admin
         @notification = Notification.new(notification_params)
 
         if @notification.save
-          send_notification(@notification)
-          redirect_to admin_notifications_path
+            NotificationsWorker.perform_async(@notification)
+            #send_notification(@notification)
+            redirect_to admin_notifications_path
         else
           render :new
         end
