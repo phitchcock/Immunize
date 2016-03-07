@@ -1,3 +1,7 @@
+checkout:
+  post:
+    - git subtree pull --prefix RailsApp
+
 deployment:
   master:
     branch: master
