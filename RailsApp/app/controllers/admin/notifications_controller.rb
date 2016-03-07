@@ -1,9 +1,9 @@
 module Admin
   class NotificationsController < Admin::ApplicationController
 
-    #include NotificationsHelper
+    include NotificationsHelper
     #include NotificationsWorker
-    
+
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
@@ -17,8 +17,8 @@ module Admin
         @notification = Notification.new(notification_params)
 
         if @notification.save
-            NotificationsWorker.perform_async(@notification)
-            #send_notification(@notification)
+            #NotificationsWorker.perform_async(@notification)
+            send_notification(@notification)
             redirect_to admin_notifications_path
         else
           render :new
