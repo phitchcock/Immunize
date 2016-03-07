@@ -18,5 +18,7 @@ as defined by the routes in the `admin/` namespace
     </li>
   <% end %>
   <br>
-  <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+  <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+  <br>
+  <li><%= link_to 'Home', root_path %></li>
 </ul>
