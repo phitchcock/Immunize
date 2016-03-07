@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <%= render 'layouts/navbar' %>
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4">
+        <%= flash_messages %>
         <%= yield %>
       </div>
       <div class="col-md-4"></div>
