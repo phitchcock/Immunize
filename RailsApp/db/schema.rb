@@ -11,24 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305222717) do
+ActiveRecord::Schema.define(version: 20160307215312) do
 
   create_table "devices", force: :cascade do |t|
-    t.string   "device_token",    limit: 64
-    t.string   "registration_id"
+    t.string   "device_token", limit: 64
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "devices", ["registration_id"], name: "index_devices_on_registration_id"
-
   create_table "locations", force: :cascade do |t|
     t.string   "name"
-    t.string   "street_number"
+    t.integer  "street_number"
     t.string   "street_name"
     t.string   "city"
     t.string   "state"
-    t.string   "zip"
+    t.integer  "zip"
     t.string   "date"
     t.string   "time"
     t.datetime "created_at",    null: false
