@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307215312) do
+ActiveRecord::Schema.define(version: 20160307220501) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "device_token", limit: 64
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20160307215312) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
-    t.integer  "street_number"
+    t.string   "street_number"
     t.string   "street_name"
     t.string   "city"
     t.string   "state"
-    t.integer  "zip"
+    t.string   "zip"
     t.string   "date"
     t.string   "time"
     t.datetime "created_at",    null: false

@@ -10,11 +10,11 @@ class LocationDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    street_number: Field::Number,
+    street_number: Field::String,
     street_name: Field::String,
     city: Field::String,
     state: Field::String,
-    zip: Field::Number,
+    zip: Field::String,
     date: Field::String,
     time: Field::String,
     created_at: Field::DateTime,
