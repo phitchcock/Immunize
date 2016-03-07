@@ -24,6 +24,7 @@ group :production do
   gem 'unicorn'
   gem 'newrelic_rpm'
   gem 'rack-timeout'
+  gem 'sidekiq'
 end
 
 group :development, :test do
