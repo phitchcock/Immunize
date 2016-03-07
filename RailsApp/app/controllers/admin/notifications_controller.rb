@@ -13,7 +13,6 @@ module Admin
     # end
 
     def create
-        
         @notification = Notification.new(notification_params)
 
         if @notification.save
@@ -25,13 +24,7 @@ module Admin
         end
     end
 
-    # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   Notification.find_by!(slug: param)
-    # end
-
-    # See https://administrate-docs.herokuapp.com/customizing_controller_actions
-    # for more information
+    private
 
     def notification_params
         params.require(:notification).permit!
