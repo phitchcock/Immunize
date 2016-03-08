@@ -44,17 +44,25 @@ class LocationViewController: UIViewController {
             let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
             let geocoder = CLGeocoder()
 
+            // TODO: Dup code as MapViewController
             // Geocode from adress
             geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
                 if let placemark = placemarks![0] as? CLPlacemark {
 
-                    // TODO: Use different placemark add directions button
-                    let location = CLLocationCoordinate2D(latitude: (placemark.location?.coordinate.latitude)!, longitude: (placemark.location?.coordinate.longitude)!)
-                    let span  =  MKCoordinateSpanMake(0.017, 0.017)
+                    let location = CLLocationCoordinate2D(latitude: 38.6249969, longitude: -121.3591972)
+                    let span  =  MKCoordinateSpanMake(0.8, 0.8)
                     let region = MKCoordinateRegion(center: location, span: span)
 
-                    self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+                    let placemark:CLPlacemark = placemarks![0] as CLPlacemark
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    let pointAnnotation:MKPointAnnotation = MKPointAnnotation()
+
+                    pointAnnotation.coordinate = coordinates
+                    pointAnnotation.title = "location.name"
+                    pointAnnotation.subtitle = address
+
                     self.mapView.region = region
+                    self.mapView.addAnnotation(pointAnnotation)
                 }
             })
         }
@@ -126,6 +134,7 @@ extension LocationViewController: MKMapViewDelegate {
         }
 
         let detailButton: UIButton = UIButton(type: UIButtonType.DetailDisclosure)
+        detailButton.tintColor = UIColor.blackColor()
 
         // Reuse the annotation if possible
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
@@ -134,12 +143,13 @@ extension LocationViewController: MKMapViewDelegate {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "pin")
             annotationView!.canShowCallout = true
             annotationView!.image = UIImage(named: "pin.png")
-            annotationView!.rightCalloutAccessoryView = detailButton
+            annotationView!.leftCalloutAccessoryView = detailButton
         }
         else {
             annotationView!.annotation = annotation
         }
 
+        
         return annotationView
     }
 }
