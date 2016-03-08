@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307220501) do
+ActiveRecord::Schema.define(version: 20160308215929) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "device_token", limit: 64
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20160307220501) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notifications_rpush_notifications", id: false, force: :cascade do |t|
+    t.integer "notification_id"
+    t.integer "rpush_notification_id"
+  end
+
+  add_index "notifications_rpush_notifications", ["notification_id"], name: "notifications_notification_id"
+  add_index "notifications_rpush_notifications", ["rpush_notification_id"], name: "notifications_rpush_id"
 
   create_table "rpush_apps", force: :cascade do |t|
     t.string   "name",                                null: false

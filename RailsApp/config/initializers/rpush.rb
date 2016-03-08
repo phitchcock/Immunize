@@ -133,3 +133,7 @@ Rpush.reflect do |on|
   # on.error do |error|
   # end
 end
+
+Rpush::Apns::Notification.class_eval do
+  has_and_belongs_to_many :notifications
+end

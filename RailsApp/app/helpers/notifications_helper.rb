@@ -17,6 +17,7 @@ module NotificationsHelper
       n.device_token = d.device_token #64-character hex string
       n.alert = notification.message
       n.data = { data: notification.title }
+      notification.rpush_notifications << n
       n.save!
     end
   end
