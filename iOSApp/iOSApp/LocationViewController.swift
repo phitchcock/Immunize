@@ -80,15 +80,27 @@ class LocationViewController: UIViewController {
         let startDate = NSDate()
         let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
-        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-            eventStore.requestAccessToEntityType(.Event, completion: {
-                granted, error in
+        let alertController = UIAlertController(title: "Save to Calendar?", message: "Do you want to save this event to your calendar?", preferredStyle: .Alert)
+
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+
+            if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+                eventStore.requestAccessToEntityType(.Event, completion: {
+                    granted, error in
+                    self.createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+                })
+            } else {
                 self.createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
-            })
-        } else {
-            createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+            }
+
         }
-        
+        alertController.addAction(okAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(cancelAction)
+
+        self.presentViewController(alertController, animated: true, completion:nil)
     }
 
     @IBAction func popViewController(sender: UIButton) {
@@ -97,6 +109,7 @@ class LocationViewController: UIViewController {
 
     // Creates an event in the EKEventStore
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+
         let event = EKEvent(eventStore: eventStore)
 
         event.title = title
