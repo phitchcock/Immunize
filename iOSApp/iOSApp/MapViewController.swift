@@ -119,6 +119,8 @@ class MapViewController: UIViewController {
     func reverseGeocodeLocations() {
         for location in locations {
 
+            var name = location.name
+
             let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
             let geocoder = CLGeocoder()
 
@@ -136,7 +138,7 @@ class MapViewController: UIViewController {
                     let pointAnnotation:MKPointAnnotation = MKPointAnnotation()
 
                     pointAnnotation.coordinate = coordinates
-                    pointAnnotation.title = "location.name"
+                    pointAnnotation.title = "\(name)"
                     pointAnnotation.subtitle = address
 
                     self.mapView.region = region

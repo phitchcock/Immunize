@@ -58,7 +58,7 @@ class LocationViewController: UIViewController {
                     let pointAnnotation:MKPointAnnotation = MKPointAnnotation()
 
                     pointAnnotation.coordinate = coordinates
-                    pointAnnotation.title = "location.name"
+                    pointAnnotation.title = self.nameLabel.text
                     pointAnnotation.subtitle = address
 
                     self.mapView.region = region
