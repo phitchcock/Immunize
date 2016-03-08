@@ -138,3 +138,32 @@ class MapViewController: UIViewController {
         }
     }
 }
+
+extension MapViewController: MKMapViewDelegate {
+
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+
+        let identifier = "myPin"
+
+        if annotation.isKindOfClass(MKUserLocation) {
+            return nil
+        }
+
+        let detailButton: UIButton = UIButton(type: UIButtonType.DetailDisclosure)
+
+        // Reuse the annotation if possible
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            annotationView!.canShowCallout = true
+            annotationView!.image = UIImage(named: "pin.png")
+            annotationView!.rightCalloutAccessoryView = detailButton
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
+}
