@@ -123,6 +123,7 @@ class LocationViewController: UIViewController {
     }
 }
 
+// MARK: MKMapViewDelegate
 extension LocationViewController: MKMapViewDelegate {
 
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -149,8 +150,24 @@ extension LocationViewController: MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
 
-        
         return annotationView
+    }
+
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
+        calloutAccessoryControlTapped control: UIControl) {
+
+            let selectedLoc = view.annotation
+
+            //let currentLocMapItem = MKMapItem.mapItemForCurrentLocation()
+
+            let selectedPlacemark = MKPlacemark(coordinate: selectedLoc!.coordinate, addressDictionary: nil)
+            let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
+
+            let mapItems = [selectedMapItem]
+
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+
+            MKMapItem.openMapsWithItems(mapItems, launchOptions:launchOptions)
     }
 }
 
