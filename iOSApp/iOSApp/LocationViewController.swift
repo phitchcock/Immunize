@@ -8,11 +8,13 @@
 
 import UIKit
 import MapKit
+import EventKit
 
 class LocationViewController: UIViewController {
 
     // MARK: Properties
     var location: Location?
+    var savedEventId : String = ""
 
     // MARK: @IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -63,7 +65,52 @@ class LocationViewController: UIViewController {
     }
     
     // TODO: Add action for notify button - add to calendar
+    @IBAction func addEventToCalendar(sender: UIButton) {
+
+        let eventStore = EKEventStore()
+
+        let startDate = NSDate()
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
+
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                self.createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+            })
+        } else {
+            createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+        }
+        
+    }
+
     @IBAction func popViewController(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // Creates an event in the EKEventStore
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+            savedEventId = event.eventIdentifier
+
+            let alertController = UIAlertController(title: "Event Saved to Calendar", message: "\(startDate) \(endDate)", preferredStyle: .Alert)
+
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+                print("you have pressed OK button");
+            }
+            alertController.addAction(okAction)
+
+            self.presentViewController(alertController, animated: true, completion:nil)
+
+        } catch {
+            print("Bad things happened")
+        }
     }
 }

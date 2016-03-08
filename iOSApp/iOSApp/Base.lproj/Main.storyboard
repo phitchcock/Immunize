@@ -512,9 +512,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwX-TR-5Pn">
                                                 <rect key="frame" x="0.0" y="405" width="160" height="45"/>
                                                 <color key="backgroundColor" red="0.18823529411764706" green="0.6470588235294118" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="NOTIFY">
+                                                <state key="normal" title="ADD">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addEventToCalendar:" destination="I0K-BF-wTq" eventType="touchUpInside" id="BHa-zo-4vZ"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-on-Ayq">
                                                 <rect key="frame" x="0.0" y="348" width="320" height="2"/>
