@@ -15,9 +15,12 @@ class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var streetlabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellBackgroundView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellBackgroundView.layer.cornerRadius = 10
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

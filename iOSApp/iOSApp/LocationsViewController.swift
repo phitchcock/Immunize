@@ -28,6 +28,7 @@ class LocationsViewController: UIViewController {
         tableView.tableFooterView = UIView()
         refreshControl.tintColor = UIColor.whiteColor()
         tableView.addSubview(refreshControl)
+        tableView.rowHeight = 90.0
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -164,8 +165,19 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = locationCell.name
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
-        cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2
+        cell.dateLabel.text = locationCell.date
+        //cell.timeLabel.text = locationCell.time
+        //cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2
         cell.cellImageView.clipsToBounds = true
+        if indexPath.row % 2 == 0 {
+            cell.cellImageView.image = UIImage(named: "2.png")
+        }
+        else if indexPath.row % 3 == 0 {
+            cell.cellImageView.image = UIImage(named: "3.png")
+        }
+        else if indexPath.row % 5 == 0 {
+            cell.cellImageView.image = UIImage(named: "4.png")
+        }
         return cell
     }
 
