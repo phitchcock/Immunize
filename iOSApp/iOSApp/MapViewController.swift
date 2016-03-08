@@ -181,17 +181,29 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
 
-            let selectedLoc = view.annotation
+            let alertController = UIAlertController(title: "Would you like directions?", message: "need to put address here", preferredStyle: .Alert)
 
-            //let currentLocMapItem = MKMapItem.mapItemForCurrentLocation()
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+                let selectedLoc = view.annotation
 
-            let selectedPlacemark = MKPlacemark(coordinate: selectedLoc!.coordinate, addressDictionary: nil)
-            let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
+                //let currentLocMapItem = MKMapItem.mapItemForCurrentLocation()
 
-            let mapItems = [selectedMapItem]
+                let selectedPlacemark = MKPlacemark(coordinate: selectedLoc!.coordinate, addressDictionary: nil)
+                let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
 
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            
-            MKMapItem.openMapsWithItems(mapItems, launchOptions:launchOptions)
+                let mapItems = [selectedMapItem]
+
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+
+                MKMapItem.openMapsWithItems(mapItems, launchOptions:launchOptions)
+            }
+            alertController.addAction(okAction)
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+
+            }
+            alertController.addAction(cancelAction)
+
+            self.presentViewController(alertController, animated: true, completion:nil)
     }
 }
