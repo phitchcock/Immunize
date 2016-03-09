@@ -1,0 +1,8 @@
+<% @locations.each do |location| %>
+  <%= link_to location do %>
+  <a href="<%= location_path(location) %>" class="list-group-item">
+      <h4 class="list-group-item-heading"><%= location.name %></h4>
+      <p class="list-group-item-text"><%= location.city %></p>
+  </a>
+  <% end %>
+<% end %>

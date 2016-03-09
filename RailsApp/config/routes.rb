@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   #require 'sidekiq/web'
   #mount Sidekiq::Web, at: '/sidekiq'
-  root to: 'pages#home'
+  #root to: 'pages#home'
+  root to: 'locations#index'
 
-  resources :locations, only: [:index]
+  resources :locations, only: [:index, :show]
 
   devise_for :users
 
