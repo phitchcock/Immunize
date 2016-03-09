@@ -1,0 +1,30 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <ul class="list-group">
+      <% @locations.each do |location| %>
+        <li class="list-group-item"><%= location.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <section id="map">
+
+              <div id="map"></div>
+
+            </section>
+            <p>
+              Content of page.
+            </p>
+            <p>
+              Menu will appear collapsed on smaller screens &ndash; resize me!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

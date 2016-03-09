@@ -9,15 +9,7 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <%= flash_messages %>
-        <%= yield %>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-  </div>
+  <%= flash_messages %>
+  <%= yield %>
 </body>
 </html>

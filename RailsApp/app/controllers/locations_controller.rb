@@ -18,8 +18,12 @@
 
 class LocationsController < ApplicationController
 
+  layout "location"
+
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+
+
 
   def index
     @locations = Location.all

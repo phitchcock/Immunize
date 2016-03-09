@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   #mount Sidekiq::Web, at: '/sidekiq'
   root to: 'pages#home'
 
+  resources :locations, only: [:index]
+
   devise_for :users
 
   namespace :admin do
     resources :locations
     resources :notifications
     resources :users
-    resources :devices 
+    resources :devices
 
     root to: "locations#index"
   end
