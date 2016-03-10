@@ -52,10 +52,6 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -182,13 +178,6 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
-    react-rails (1.6.2)
-      babel-transpiler (>= 0.7.0)
-      coffee-script-source (~> 1.8)
-      connection_pool
-      execjs
-      rails (>= 3.2)
-      tilt
     redis (3.2.2)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
@@ -290,7 +279,6 @@ DEPENDENCIES
   rack-timeout
   rails (= 4.2.5.2)
   rails_12factor
-  react-rails
   rpush
   rspec-rails
   sass-rails (~> 5.0)

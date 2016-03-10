@@ -23,8 +23,7 @@ class NotificationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :message,
-    :created_at,
+    :message
   ]
 
   # SHOW_PAGE_ATTRIBUTES

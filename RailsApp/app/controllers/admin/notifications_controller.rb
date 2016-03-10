@@ -1,13 +1,13 @@
 module Admin
   class NotificationsController < Admin::ApplicationController
 
-    include SendNotification#NotificationsHelper
+    include SendNotification #NotificationsHelper
 
     def create
         @notification = Notification.new(notification_params)
 
         if @notification.save
-            send_notification(@notification)
+            send(@notification)
             redirect_to admin_notifications_path
         else
             render :new

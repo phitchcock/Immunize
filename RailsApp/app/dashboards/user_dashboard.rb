@@ -30,9 +30,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :email,
-    :encrypted_password,
-    :reset_password_token,
+    :email
   ]
 
   # SHOW_PAGE_ATTRIBUTES
