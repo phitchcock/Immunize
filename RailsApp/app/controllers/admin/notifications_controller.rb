@@ -7,7 +7,7 @@ module Admin
         @notification = Notification.new(notification_params)
 
         if @notification.save
-            send(@notification)
+            send_notification(@notification)
             redirect_to admin_notifications_path
         else
             render :new

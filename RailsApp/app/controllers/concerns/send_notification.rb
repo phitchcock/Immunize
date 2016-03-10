@@ -1,7 +1,7 @@
 module SendNotification
   extend ActiveSupport::Concern
 
-  def send(notification)
+  def send_notification(notification)
     Device.all.each do |d|
       n = Rpush::Apns::Notification.new
       n.app = Rpush::Apns::App.find_by_name("iOSApp")
