@@ -125,6 +125,19 @@ navbar-fixed-top {
     transition: all 0.2s ease-in-out 0s;
 }
 
+.scrollable {
+    height: 100%;
+    overflow: auto;
+}
+
+.max-height {
+    height: 900px;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
 @media (max-width: 767px) {
     .navbar-nav > li > a {
     line-height: 20px;
