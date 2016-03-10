@@ -56,7 +56,6 @@ Web Front End
 - style login and register
 
 Web Admin
-- add navbar
 - change date:string to date:date sort by date
 
 iOS App

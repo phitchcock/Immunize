@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :locations
     resources :notifications
-    resources :users
     resources :devices
+    resources :users
 
     root to: "locations#index"
   end
