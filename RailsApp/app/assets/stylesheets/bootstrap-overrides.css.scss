@@ -7,6 +7,8 @@ $dropDown       : true;
   background-color: $bgDefault;
   border-color: $bgHighlight;
   .navbar-brand {
+    height: 75px;
+    padding: 30px;
     color: $colDefault;
     &:hover, &:focus {
       color: $colHighlight; }}
@@ -81,11 +83,6 @@ navbar-fixed-top {
     padding-top: 0px;
     padding-bottom: 0px;
     line-height: 80px;
-}
-
-.navbar-brand {
-  height: 75px;
-  padding: 30px;
 }
 
 .navbar-default .navbar-brand {

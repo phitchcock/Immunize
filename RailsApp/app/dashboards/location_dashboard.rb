@@ -67,9 +67,7 @@ class LocationDashboard < Administrate::BaseDashboard
     :zip,
     :date,
     :time,
-    :info,
-    :latitude,
-    :longitude,
+    :info
   ]
 
   # Overwrite this method to customize how locations are displayed
