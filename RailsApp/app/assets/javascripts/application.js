@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require underscore-min
+//= require gmaps/google
 //= require  bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
+
