@@ -2,7 +2,9 @@
   <%#= link_to location do %>
   <a href="<%= root_path %>" class="list-group-item">
       <h4 class="list-group-item-heading"><%= location.name %></h4>
-      <p class="list-group-item-text"><%= location.city %></p>
+      <p class="list-group-item-text"><%= location.street_number %> <%= location.street_name %></p>
+      <p class="list-group-item-text"><%= location.city %>, <%= location.state %> <%= location.zip %></p>
+      <p class="list-group-item-text"><%= location.date %> <%= location.time %></p>
   </a>
   <%# end %>
 <% end %>
