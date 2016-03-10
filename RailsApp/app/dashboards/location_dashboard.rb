@@ -20,6 +20,8 @@ class LocationDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     info: Field::Text,
+    latitude: Field::Number.with_options(decimals: 2),
+    longitude: Field::Number.with_options(decimals: 2),
   }
 
   # COLLECTION_ATTRIBUTES
@@ -49,6 +51,8 @@ class LocationDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :info,
+    :latitude,
+    :longitude,
   ]
 
   # FORM_ATTRIBUTES
@@ -64,6 +68,8 @@ class LocationDashboard < Administrate::BaseDashboard
     :date,
     :time,
     :info,
+    :latitude,
+    :longitude,
   ]
 
   # Overwrite this method to customize how locations are displayed
