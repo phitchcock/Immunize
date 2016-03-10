@@ -57,6 +57,7 @@ Web Front End
 
 Web Admin
 - add navbar
+- change date:string to date:date sort by date
 
 iOS App
 - finish info views
