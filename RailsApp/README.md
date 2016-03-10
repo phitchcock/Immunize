@@ -44,3 +44,20 @@ Authentication is handeled through Devise
 
 Architecture
 ------------
+
+TODO
+------------
+Readme
+- update all
+
+Web Front End
+- show modal or show page
+- click on sidebar show map location with info
+- style login and register
+
+Web Admin
+- add navbar
+
+iOS App
+- finish info views
+- style list
