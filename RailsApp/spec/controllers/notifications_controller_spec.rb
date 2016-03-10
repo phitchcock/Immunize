@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: notifications
-#
-#  id         :integer          not null, primary key
-#  title      :string
-#  message    :string
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 require 'rails_helper'
 
 RSpec.describe NotificationsController, type: :controller do

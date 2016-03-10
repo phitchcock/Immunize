@@ -48,9 +48,6 @@ GEM
       rails (~> 4.2)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
-    annotate (2.7.0)
-      activerecord (>= 3.2, < 6.0)
-      rake (~> 10.4)
     ansi (1.5.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
@@ -276,7 +273,6 @@ PLATFORMS
 
 DEPENDENCIES
   administrate (~> 0.1.4)
-  annotate
   bootstrap-sass
   coffee-rails (~> 4.1.0)
   devise
