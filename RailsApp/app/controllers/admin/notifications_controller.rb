@@ -8,6 +8,7 @@ module Admin
 
         if @notification.save
             send_notification(@notification)
+            flash[:notice] = "Notification was successfully sent!"
             redirect_to admin_notifications_path
         else
             render :new
