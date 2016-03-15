@@ -1,12 +1,11 @@
-
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #888;
-    line-height: 30px;
-    text-align: center;
-    margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+  line-height: 30px;
+  text-align: center;
+  margin: 0;
 }
 
 strong { font-weight: 500; }
@@ -44,7 +43,6 @@ img { max-width: 100%; }
 
 ::-moz-selection { background: #4aaf51; color: #fff; text-shadow: none; }
 ::selection { background: #4aaf51; color: #fff; text-shadow: none; }
-
 
 .btn-link-1 {
 	display: inline-block;
@@ -86,7 +84,6 @@ img { max-width: 100%; }
 }
 .btn-link-2:hover, .btn-link-2:focus,
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
-
 
 /***** Top content *****/
 
@@ -173,7 +170,6 @@ img { max-width: 100%; }
 	margin-top: 25px;
 }
 
-
 /***** Media queries *****/
 
 @media (min-width: 992px) and (max-width: 1199px) {}
@@ -191,4 +187,3 @@ img { max-width: 100%; }
 	h1, h2 { font-size: 32px; }
 
 }
-

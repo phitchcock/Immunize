@@ -11,8 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require underscore-min
+//= require underscore
 //= require gmaps/google
 //= require  bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready (function(){
+  $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
+    (".alert-dismissible").alert('close');
+  });
+});

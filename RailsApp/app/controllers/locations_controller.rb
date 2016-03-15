@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index]
+
   layout "location"
 
   before_action :authenticate_user!, except: [:index, :show]
@@ -18,8 +20,8 @@ class LocationsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
-      format.js # show.js.erb
+      format.html
+      format.js
     end
   end
 

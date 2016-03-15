@@ -20,6 +20,7 @@ gem 'rack-timeout'
 gem 'sidekiq'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :production do
   gem 'pg'

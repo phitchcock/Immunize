@@ -4,21 +4,21 @@ module Admin
     include SendNotification #NotificationsHelper
 
     def create
-        @notification = Notification.new(notification_params)
+      @notification = Notification.new(notification_params)
 
-        if @notification.save
-            send_notification(@notification)
-            flash[:notice] = "Notification was successfully sent!"
-            redirect_to admin_notifications_path
-        else
-            render :new
-        end
+      if @notification.save
+        send_notification(@notification)
+        flash[:notice] = "Notification was successfully sent!"
+        redirect_to admin_notifications_path
+      else
+        render :new
+      end
     end
 
     private
 
     def notification_params
-        params.require(:notification).permit!
+      params.require(:notification).permit!
     end
   end
 end
