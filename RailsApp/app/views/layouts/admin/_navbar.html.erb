@@ -1,39 +1,3 @@
-<style>
-.ul-class {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #30A5DA;
-}
-
-.li-class {
-    float: left;
-}
-
-.li-a-class {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/*a:hover:not(.active) {
-    background-color: #111;
-}*/
-
-.active {
-background-color:#4CAF50;
-}
-
-.pull-right {
-  text-align: right;
-  padding-right: 20px;
-}
-
-</style>
-
 <ul class="ul-class">
   <li class="li-class"><%= link_to "immunize", root_path, class: "li-a-class" %></li>
   <li class="pull-right"><%= link_to 'LOGOUT', destroy_user_session_path, :method => :delete, class: "li-a-class" %></li>

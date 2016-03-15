@@ -1,9 +1,5 @@
 class LocationsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index]
-
-  layout "location"
-
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 

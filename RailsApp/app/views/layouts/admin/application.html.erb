@@ -20,8 +20,7 @@ By default, it renders:
   <meta name="viewport" content="initial-scale=1" />
   <title><%= content_for(:title) %> | <%= Rails.application.class.parent_name.titlecase %></title>
   <%= stylesheet_link_tag "administrate/application", media: "all" %>
-  <%= stylesheet_link_tag 'application', media: 'administrate-overrides' %>
-
+  <%= stylesheet_link_tag "administrate/overrides", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -41,11 +40,4 @@ By default, it renders:
 
   <%= render "javascript" %>
 </body>
-<script type="text/javascript">
-  $(document).ready (function(){
-    $(".flashes").fadeTo(2000, 500).slideUp(500, function(){
-      (".flashes").alert('close');
-    });
- });
-</script>
 </html>

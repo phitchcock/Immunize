@@ -1,7 +1,7 @@
 module Admin
   class NotificationsController < Admin::ApplicationController
 
-    include SendNotification #NotificationsHelper
+    include SendNotification
 
     def create
       @notification = Notification.new(notification_params)
