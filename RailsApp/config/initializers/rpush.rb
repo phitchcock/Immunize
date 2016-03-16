@@ -1,3 +1,12 @@
+# Create app first
+# app = Rpush::Apns::App.new
+# app.name = "iOSApp"
+# app.certificate = File.read("lib/certs/sandbox.pem")
+# app.environment = "sandbox" # APNs environment.
+# app.password = ""
+# app.connections = 1
+# app.save!
+
 Rpush.configure do |config|
 
   # Supported clients are :active_record, :redis and :mongoid
