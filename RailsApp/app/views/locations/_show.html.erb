@@ -1,0 +1,20 @@
+<div class="modal fade" id="myModal-<%= location.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="form-top">
+      <div class="form-top-left">
+        <h4 class="modal-title" id="myModalLabel">FREE Immunization Clinic:</h4>
+      </div>
+    </div>
+    <div class="form-bottom">
+      <div class="modal-body text-center">
+        <h3><%= location.name %></h3>
+        <h4><%= location.street_number %> <%= location.street_name %></h4>
+        <h4><%= location.date %></h4>
+        <h4>From <%= location.time %></h4>
+        <br>
+        <p><%= location.info %></p>
+      </div>
+      <button type="button" class="btn btn-block" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
