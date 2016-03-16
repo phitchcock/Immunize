@@ -1,5 +1,5 @@
 <% @locations.each do |location| %>
-  <div class="list-group-item">
+  <div class="list-group-item text-left">
     <h4 class="list-group-item-heading"><%=link_to location.name, location, remote: true, data: { toggle: "modal", target: "#myModal" } %></h4>
     <p class="list-group-item-text"><%= location.street_number %> <%= location.street_name %></p>
     <p class="list-group-item-text"><%= location.city %>, <%= location.state %> <%= location.zip %></p>
@@ -9,11 +9,12 @@
   <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="form-top">
+      <div class="form-top-left">
         <h4 class="modal-title" id="myModalLabel"><%= location.name %></h4>
       </div>
+    </div>
+    <div class="form-bottom">
       <div class="modal-body text-center">
         <h3><%= location.name %></h3>
         <h4><%= location.street_number %> <%= location.street_name %></h4>
@@ -22,9 +23,9 @@
         <br>
         <p><%= location.info %></p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+
+      <button type="button" class="btn btn-block" data-dismiss="modal">Close</button>
+
     </div>
   </div>
 </div>
