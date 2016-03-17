@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :locations, only: [:index]
-      resources :devices, only: [:index]
+      resources :devices, only: [:index, :create]
       resources :notifications, only: [:index]
     end
   end
