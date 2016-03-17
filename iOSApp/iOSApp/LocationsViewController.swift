@@ -28,7 +28,7 @@ class LocationsViewController: UIViewController {
         tableView.tableFooterView = UIView()
         refreshControl.tintColor = UIColor.whiteColor()
         tableView.addSubview(refreshControl)
-        tableView.rowHeight = 90.0
+        tableView.rowHeight = 125.0
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -161,21 +161,15 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! LocationTableViewCell
         let locationCell = locations[indexPath.row]
+
         cell.nameLabel.text = locationCell.name
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
         cell.dateLabel.text = locationCell.date
-        cell.cellImageView.clipsToBounds = true
 
-        if indexPath.row % 2 == 0 {
-            cell.cellImageView.image = UIImage(named: "2.png")
-        }
-        else if indexPath.row % 3 == 0 {
-            cell.cellImageView.image = UIImage(named: "3.png")
-        }
-        else if indexPath.row % 5 == 0 {
-            cell.cellImageView.image = UIImage(named: "4.png")
-        }
+        let randomColor = Int(arc4random_uniform(UInt32(colorArray.count)))
+        cell.backgroundColor = colorArray[randomColor]
+
         return cell
     }
 

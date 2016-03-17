@@ -183,7 +183,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
 
-            let alertController = UIAlertController(title: "Would you like directions?", message: "need to put address here", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Would you like directions to?", message: view.annotation!.subtitle!, preferredStyle: .Alert)
 
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
                 let selectedLoc = view.annotation

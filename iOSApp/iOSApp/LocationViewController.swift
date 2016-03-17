@@ -72,7 +72,7 @@ class LocationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // TODO: Add action for notify button - add to calendar
+    // TODO: FIX Save date
     @IBAction func addEventToCalendar(sender: UIButton) {
 
         let eventStore = EKEventStore()
@@ -80,17 +80,17 @@ class LocationViewController: UIViewController {
         let startDate = NSDate()
         let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
-        let alertController = UIAlertController(title: "Save to Calendar?", message: "Do you want to save this event to your calendar?", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Save Event", message: "Do you want to save this event to your calendar?", preferredStyle: .Alert)
 
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
 
             if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
                 eventStore.requestAccessToEntityType(.Event, completion: {
                     granted, error in
-                    self.createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+                    self.createEvent(eventStore, title: (self.location?.name)!, startDate: startDate, endDate: endDate)
                 })
             } else {
-                self.createEvent(eventStore, title: "DJ's Test Event", startDate: startDate, endDate: endDate)
+                self.createEvent(eventStore, title: (self.location?.name)!, startDate: startDate, endDate: endDate)
             }
 
         }
@@ -124,7 +124,6 @@ class LocationViewController: UIViewController {
             let alertController = UIAlertController(title: "Event Saved to Calendar", message: "\(startDate) \(endDate)", preferredStyle: .Alert)
 
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
-                print("you have pressed OK button");
             }
             alertController.addAction(okAction)
 
@@ -169,7 +168,7 @@ extension LocationViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
 
-            let alertController = UIAlertController(title: "Would you like directions?", message: "need to put address here", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Would you like directions to?", message: view.annotation!.subtitle!, preferredStyle: .Alert)
 
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
                 let selectedLoc = view.annotation
