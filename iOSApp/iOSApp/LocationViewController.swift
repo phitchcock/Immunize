@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import EventKit
 
-
 class LocationViewController: UIViewController {
 
     // MARK: Properties
