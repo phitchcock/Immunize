@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -58,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let deviceTokenStr = convertDeviceTokenToString(deviceToken)
         // ...register device token with our Time Entry API server via REST
+        postToken(deviceTokenStr)
     }
 
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -95,6 +97,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // call the completion handler
                 // -- pass in NoData, since no new data was fetched from the server.
                 completionHandler(UIBackgroundFetchResult.NoData)
+        }
+    }
+
+    func postToken(token: String) {
+
+        let headers = [
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        ]
+
+        let parameters = ["device": ["device_token": token]]
+
+        Alamofire.request(.POST, postTokenUrl, headers: headers, parameters: parameters, encoding: .JSON)
+            .responseJSON { response in
+
+                if let parseJSON = response.result.value {
+                    print(parseJSON)
+                }
         }
     }
 }

@@ -9,3 +9,4 @@
 import Foundation
 
 var locationUrl = "https://sac-immunize.herokuapp.com/api/v1/locations"
+var postTokenUrl = "https://sac-immunize.herokuapp.com/api/v1/devices"
