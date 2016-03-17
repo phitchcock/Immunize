@@ -7,7 +7,7 @@ class Api::V1::DevicesController < ApplicationController
   end
 
   def create
-    device = Device.new(device_params)
+    device = Device.find_or_initialize_by(device_params)
 
     if device.save
       render json: device, status: 201
