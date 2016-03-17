@@ -174,8 +174,6 @@ extension LocationViewController: MKMapViewDelegate {
             let okAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
                 let selectedLoc = view.annotation
 
-                //let currentLocMapItem = MKMapItem.mapItemForCurrentLocation()
-
                 let selectedPlacemark = MKPlacemark(coordinate: selectedLoc!.coordinate, addressDictionary: nil)
                 let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
 

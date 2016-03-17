@@ -18,8 +18,6 @@ class LocationsViewController: UIViewController {
         refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         return refreshControl
     }()
-    var net = Networking()
-    
 
     // MARK: @IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -167,9 +165,8 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
         cell.dateLabel.text = locationCell.date
-        //cell.timeLabel.text = locationCell.time
-        //cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2
         cell.cellImageView.clipsToBounds = true
+
         if indexPath.row % 2 == 0 {
             cell.cellImageView.image = UIImage(named: "2.png")
         }
