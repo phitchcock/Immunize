@@ -1,4 +1,4 @@
-class Api::V1::DevicesController < ApplicationController
+class Api::V1::DevicesController < ApiController
 
   before_action :authenticate_user!
 
