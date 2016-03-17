@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A415EF7C5FBCA04ACFBEE12B /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E89EBC9CCC5005756366C07 /* Pods_iOSApp.framework */; };
+		D02D45CA1C9B2DDC00A647AD /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45C91C9B2DDC00A647AD /* Global.swift */; };
+		D02D45CC1C9B2E5100A647AD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45CB1C9B2E5100A647AD /* Networking.swift */; };
+		D02D45CD1C9B349900A647AD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09810E71C875FE20025E968 /* Location.swift */; };
 		D09810E61C86DE5F0025E968 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D09810E51C86DE5F0025E968 /* Podfile */; };
 		D09810E81C875FE20025E968 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09810E71C875FE20025E968 /* Location.swift */; };
 		D09810EA1C87688E0025E968 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09810E91C87688E0025E968 /* LocationViewController.swift */; };
@@ -46,6 +49,8 @@
 		3E89EBC9CCC5005756366C07 /* Pods_iOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7721E192C38449DE8F3291F3 /* Pods-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSApp/Pods-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A71D3439921BF1333D4BCD75 /* Pods-iOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSApp/Pods-iOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		D02D45C91C9B2DDC00A647AD /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		D02D45CB1C9B2E5100A647AD /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		D09810E51C86DE5F0025E968 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D09810E71C875FE20025E968 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D09810E91C87688E0025E968 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +117,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D02D45C81C9B2DC500A647AD /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D02D45C91C9B2DDC00A647AD /* Global.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
 		D09810EB1C876CA70025E968 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,7 @@
 		D0E701D31C86DC77002F3FBF /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D02D45C81C9B2DC500A647AD /* Global */,
 				D0E702021C86DC90002F3FBF /* Models */,
 				D0E702031C86DC9A002F3FBF /* Views */,
 				D0E702041C86DCA1002F3FBF /* Controllers */,
@@ -206,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				D09810E71C875FE20025E968 /* Location.swift */,
+				D02D45CB1C9B2E5100A647AD /* Networking.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -419,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09810F01C8787420025E968 /* LocationTableViewCell.swift in Sources */,
+				D02D45CC1C9B2E5100A647AD /* Networking.swift in Sources */,
 				D09810F71C8823240025E968 /* LandingViewController.swift in Sources */,
 				D0E701D71C86DC77002F3FBF /* LocationsViewController.swift in Sources */,
 				D09810FC1C8A0E550025E968 /* InfoTableViewController.swift in Sources */,
@@ -426,6 +442,7 @@
 				D0E701D51C86DC77002F3FBF /* AppDelegate.swift in Sources */,
 				D09810EE1C876D2F0025E968 /* MapViewController.swift in Sources */,
 				D09810EA1C87688E0025E968 /* LocationViewController.swift in Sources */,
+				D02D45CA1C9B2DDC00A647AD /* Global.swift in Sources */,
 				D09810FE1C8A1B0F0025E968 /* DeveloperViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02D45CD1C9B349900A647AD /* Location.swift in Sources */,
 				D0E701EA1C86DC77002F3FBF /* iOSAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

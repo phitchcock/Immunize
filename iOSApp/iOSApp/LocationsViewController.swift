@@ -18,6 +18,8 @@ class LocationsViewController: UIViewController {
         refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         return refreshControl
     }()
+    var net = Networking()
+    
 
     // MARK: @IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -43,7 +45,7 @@ class LocationsViewController: UIViewController {
     // TODO: Move out of controller dup code
     func getLocations() {
 
-        Alamofire.request(.GET, "https://sac-immunize.herokuapp.com/api/v1/locations")
+        Alamofire.request(.GET, locationUrl)
             .responseJSON { response in
     
                 if let JSON = response.result.value {
@@ -132,10 +134,9 @@ class LocationsViewController: UIViewController {
 
     }
 
+
     func handleRefresh(refreshControl: UIRefreshControl) {
         getLocations()
-
-        self.tableView.reloadData()
         refreshControl.endRefreshing()
     }
 

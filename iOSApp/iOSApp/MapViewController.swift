@@ -34,7 +34,7 @@ class MapViewController: UIViewController {
     // TODO: Move out of contrller dup code
     func getLocations() {
 
-        Alamofire.request(.GET, "https://sac-immunize.herokuapp.com/api/v1/locations")
+        Alamofire.request(.GET, locationUrl)
             .responseJSON { response in
 
                 if let JSON = response.result.value {
@@ -109,14 +109,14 @@ class MapViewController: UIViewController {
                         self.locations.append(location)
                         
                     }
-                    self.reverseGeocodeLocations()
+                    self.geocodeLocations()
                 }
         }
         
     }
 
     // MARK: Geocode locations
-    func reverseGeocodeLocations() {
+    func geocodeLocations() {
         for location in locations {
 
             var name = location.name
