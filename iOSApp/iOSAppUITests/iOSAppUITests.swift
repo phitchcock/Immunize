@@ -31,6 +31,30 @@ class iOSAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let app = XCUIApplication()
+        app.buttons["List of Locations"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Sacramento Ca 95822"].swipeDown()
+
+        let cellLabel = app.cells.staticTexts["DHA"]
+        let exists = NSPredicate(format: "exists == true")
+        expectationForPredicate(exists, evaluatedWithObject: cellLabel, handler: nil)
+        waitForExpectationsWithTimeout(2, handler: nil)
+
+        tablesQuery.staticTexts["Tuesday November 3"].tap()
+
+        let viewLabel = app.staticTexts["DHA"]
+        let existsPredicate = NSPredicate(format: "exists == true")
+        expectationForPredicate(existsPredicate, evaluatedWithObject: viewLabel, handler: nil)
+        waitForExpectationsWithTimeout(2, handler: nil)
+
+        app.buttons["OK"].tap()
+        app.navigationBars["Immunization Locations"].buttons["back"].tap()
+        app.buttons["Map of Locations"].tap()
+        app.navigationBars["Map of Locations"].buttons["back"].tap()
+
     }
     
 }
