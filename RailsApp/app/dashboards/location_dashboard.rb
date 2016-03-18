@@ -22,6 +22,7 @@ class LocationDashboard < Administrate::BaseDashboard
     info: Field::Text,
     latitude: Field::Number.with_options(decimals: 2),
     longitude: Field::Number.with_options(decimals: 2),
+    image: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -53,6 +54,7 @@ class LocationDashboard < Administrate::BaseDashboard
     :info,
     :latitude,
     :longitude,
+    :image,
   ]
 
   # FORM_ATTRIBUTES
@@ -67,7 +69,8 @@ class LocationDashboard < Administrate::BaseDashboard
     :zip,
     :date,
     :time,
-    :info
+    :info,
+    :image,
   ]
 
   # Overwrite this method to customize how locations are displayed

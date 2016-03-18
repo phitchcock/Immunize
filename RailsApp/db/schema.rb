@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310062732) do
+ActiveRecord::Schema.define(version: 20160318185712) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "device_token", limit: 64
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160310062732) do
     t.text     "info"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "image"
   end
 
   create_table "notifications", force: :cascade do |t|

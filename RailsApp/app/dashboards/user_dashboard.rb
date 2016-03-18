@@ -55,7 +55,6 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email
   ]
 
   # Overwrite this method to customize how users are displayed
