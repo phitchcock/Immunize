@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/HanekeSwift/Haneke.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Spring/Spring.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/HanekeSwift/Haneke.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Spring/Spring.framework"
 fi

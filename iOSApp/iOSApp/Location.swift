@@ -18,6 +18,7 @@ class Location {
     var date: String!
     var time: String!
     var info: String?
+    var image: String?
     var createdAt: String?
     var updatedAt: String?
 

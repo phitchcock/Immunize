@@ -15,6 +15,7 @@
 		D02D45D11C9B385E00A647AD /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45D01C9B385E00A647AD /* AlamofireViewController.swift */; };
 		D02D45D31C9B5A9E00A647AD /* HHSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45D21C9B5A9E00A647AD /* HHSViewController.swift */; };
 		D02D45D61C9B60D500A647AD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45D51C9B60D500A647AD /* UIColorExtension.swift */; };
+		D02D45D81CA05CBA00A647AD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D45D71CA05CBA00A647AD /* UIImageViewExtension.swift */; };
 		D09810E61C86DE5F0025E968 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D09810E51C86DE5F0025E968 /* Podfile */; };
 		D09810E81C875FE20025E968 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09810E71C875FE20025E968 /* Location.swift */; };
 		D09810EA1C87688E0025E968 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09810E91C87688E0025E968 /* LocationViewController.swift */; };
@@ -59,6 +60,7 @@
 		D02D45D01C9B385E00A647AD /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
 		D02D45D21C9B5A9E00A647AD /* HHSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSViewController.swift; sourceTree = "<group>"; };
 		D02D45D51C9B60D500A647AD /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		D02D45D71CA05CBA00A647AD /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		D09810E51C86DE5F0025E968 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D09810E71C875FE20025E968 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D09810E91C87688E0025E968 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D02D45D51C9B60D500A647AD /* UIColorExtension.swift */,
+				D02D45D71CA05CBA00A647AD /* UIImageViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				D09810EA1C87688E0025E968 /* LocationViewController.swift in Sources */,
 				D02D45CA1C9B2DDC00A647AD /* Global.swift in Sources */,
 				D09810FE1C8A1B0F0025E968 /* DeveloperViewController.swift in Sources */,
+				D02D45D81CA05CBA00A647AD /* UIImageViewExtension.swift in Sources */,
 				D02D45CF1C9B385100A647AD /* SpringViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,4 +5,5 @@ use_frameworks!
 target "iOSApp" do
   pod 'Alamofire', '~> 3.1.4'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+  pod 'HanekeSwift'
 end

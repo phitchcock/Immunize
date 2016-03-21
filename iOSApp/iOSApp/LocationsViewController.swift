@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Haneke
 
 class LocationsViewController: UIViewController {
 
@@ -65,6 +66,7 @@ class LocationsViewController: UIViewController {
                         var date: String
                         var time: String
                         var info: String
+                        var image: String
 
                         if let nameJson = a["name"] {
                             name = nameJson as! String
@@ -120,8 +122,15 @@ class LocationsViewController: UIViewController {
                             info = "ERROR"
                         }
 
+                        if let imageJson = a["image"] {
+                            image = imageJson as! String
+                        } else {
+                            image = "ERROR"
+                        }
+
                         let location = Location(name: name, streetNumber: streetNumber, streetName: streetName, city: city, state: state, zip: zip, date: date, time: time)
                         location.info = info
+                        location.image = image
 
                         self.locations.append(location)
 
@@ -166,9 +175,14 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
         cell.dateLabel.text = locationCell.date
+        //cell.cellImageView.imageFromUrl(locationCell.image!)
+        let URLString = locationCell.image
+        let URL = NSURL(string:URLString!)!
+        cell.cellImageView.hnk_setImageFromURL(URL)
 
-        let randomColor = Int(arc4random_uniform(UInt32(colorArray.count)))
-        cell.backgroundColor = colorArray[randomColor]
+
+        //let randomColor = Int(arc4random_uniform(UInt32(colorArray.count)))
+        //cell.backgroundColor = colorArray[randomColor]
 
         return cell
     }

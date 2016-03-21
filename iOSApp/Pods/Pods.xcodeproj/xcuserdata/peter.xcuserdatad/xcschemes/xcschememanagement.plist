@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HanekeSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iOSApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>14901FFCDA8A02941A045B8449D85E2F</key>
+		<key>0AA830CBA70AABC174BE9EA82D46400C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C2B1953A91633859BF7AD238FF567A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8ECE7DC5A5984B0F1FD4167B2E4138EE</key>
+		<key>F30D9A51193217BA862B9680E5D99DED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
