@@ -8,11 +8,10 @@
 
 import UIKit
 import Spring
-import Device_swift
 
 class LandingViewController: UIViewController {
 
-    let deviceType = UIDevice.currentDevice().deviceType
+    let device = Device()
 
     // MARK: @IBOutlets
     @IBOutlet weak var listLocationsButton: DesignableButton!
@@ -24,27 +23,11 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        switch deviceType {
-        case .IPhone4:
+        if device == .iPhone4s || device == .iPadAir || device == .iPadAir2 || device == .iPad2 || device == .iPad3 /*|| device == .Simulator*/ {
             landingLabel.hidden = true
-        case .IPhone4S:
-            landingLabel.hidden = true
-        case .IPad:
-            landingLabel.hidden = true
-        case .IPad2:
-            landingLabel.hidden = true
-        case .IPad3:
-            landingLabel.hidden = true
-        case .IPad4:
-            landingLabel.hidden = true
-        case .IPadAir:
-            landingLabel.hidden = true
-        case .IPadAir2:
-            landingLabel.hidden = true
-            print("ipadair")
-        default:
-            landingLabel.hidden = false
-            print(deviceType)
+            print(device)
+        } else {
+            print(device)
         }
     }
 

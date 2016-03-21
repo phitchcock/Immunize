@@ -78,7 +78,7 @@ class LocationViewController: UIViewController {
         let eventStore = EKEventStore()
 
         let startDate = NSDate()
-        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
+        let endDate = startDate.dateByAddingTimeInterval(60 * 120) // One hour
 
         let alertController = UIAlertController(title: "Save Event", message: "Do you want to save this event to your calendar?", preferredStyle: .Alert)
 
