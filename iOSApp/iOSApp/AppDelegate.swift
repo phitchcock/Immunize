@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let alert = notification["alert"] as? String {
                 print(notification)
                 print(userInfo)
-                var alertCtrl = UIAlertController(title: userInfo["data"] as! String, message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
+                let alertCtrl = UIAlertController(title: userInfo["data"] as? String, message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
                 alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 
                 var presentedVC = self.window?.rootViewController

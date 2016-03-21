@@ -49,8 +49,8 @@ class LocationViewController: UIViewController {
             geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
                 if let placemark = placemarks![0] as? CLPlacemark {
 
-                    let location = CLLocationCoordinate2D(latitude: 38.6249969, longitude: -121.3591972)
-                    let span  =  MKCoordinateSpanMake(0.8, 0.8)
+                    let location = CLLocationCoordinate2D(latitude: (placemark.location?.coordinate.latitude)!, longitude: (placemark.location?.coordinate.longitude)!)
+                    let span  =  MKCoordinateSpanMake(0.01, 0.01)
                     let region = MKCoordinateRegion(center: location, span: span)
 
                     let placemark:CLPlacemark = placemarks![0] as CLPlacemark

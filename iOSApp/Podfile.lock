@@ -1,10 +1,12 @@
 PODS:
   - Alamofire (3.1.5)
+  - Device.swift (0.3.1)
   - HanekeSwift (0.10.1)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 3.1.4)
+  - Device.swift
   - HanekeSwift
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
@@ -20,9 +22,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Device.swift: d396648eebcfc424944acfdb7391817e4bdec4e9
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 0fe032f6187bfd815d88f6ceec7c57ee3f48d3f0
+PODFILE CHECKSUM: 17fb090d9482c66181555051e2f22842803dfd10
 
 COCOAPODS: 1.0.0.beta.4

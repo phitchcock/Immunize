@@ -119,7 +119,7 @@ class MapViewController: UIViewController {
     func geocodeLocations() {
         for location in locations {
 
-            var name = location.name
+            let name = location.name
 
             let address = "\(location.streetNumber) \(location.streetName) \(location.city) \(location.state) \(location.zip)"
             let geocoder = CLGeocoder()

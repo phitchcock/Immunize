@@ -175,14 +175,10 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.streetlabel.text = "\(locationCell.streetNumber) \(locationCell.streetName)"
         cell.cityLabel.text = "\(locationCell.city) \(locationCell.state) \(locationCell.zip)"
         cell.dateLabel.text = locationCell.date
-        //cell.cellImageView.imageFromUrl(locationCell.image!)
+    
         let URLString = locationCell.image
         let URL = NSURL(string:URLString!)!
         cell.cellImageView.hnk_setImageFromURL(URL)
-
-
-        //let randomColor = Int(arc4random_uniform(UInt32(colorArray.count)))
-        //cell.backgroundColor = colorArray[randomColor]
 
         return cell
     }

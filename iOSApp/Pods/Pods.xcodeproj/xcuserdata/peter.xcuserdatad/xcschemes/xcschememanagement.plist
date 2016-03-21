@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Device.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HanekeSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0AA830CBA70AABC174BE9EA82D46400C</key>
+		<key>167C52E70ABE5A0425F8DC20AE245C5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F30D9A51193217BA862B9680E5D99DED</key>
+		<key>505D8354501ACE7B388EF6B374365DFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB0FFE105F776100B1D9E9A78AB53F83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
