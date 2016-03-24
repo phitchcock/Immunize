@@ -12,7 +12,7 @@ import Alamofire
 
 class Networking {
 
-    func getLocations(var locations: [Location], tableView: UITableView) {
+    func getLocations( var locations: [Location], tableView: UITableView) {
 
         Alamofire.request(.GET, locationUrl)
             .responseJSON { response in
