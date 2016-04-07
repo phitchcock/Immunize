@@ -13,6 +13,14 @@
 //= require jquery
 //= require underscore
 //= require gmaps/google
+//= require slick.min
+//= require waypoints.min
+//= require placeholdem.min
+//= require 'greensock/TweenLite'
+//= require 'greensock/easing/EasePack'
+//= require 'greensock/jquery.gsap.js'
+//= require jquery.themepunch.revolution.min
+//= require jquery.themepunch.plugins.min
 //= require  bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
@@ -20,5 +28,8 @@
 $(document).ready (function(){
   $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
     (".alert-dismissible").alert('close');
+  });
+  $(".flashes").fadeTo(2000, 500).slideUp(500, function(){
+    (".flashes").alert('close');
   });
 });
