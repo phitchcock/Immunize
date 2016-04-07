@@ -1,6 +1,6 @@
 class Api::V1::DevicesController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index]
 
   def index
     @devices = Device.all
