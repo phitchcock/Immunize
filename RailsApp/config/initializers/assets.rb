@@ -13,4 +13,5 @@ Rails.application.config.assets.precompile += %w(
   devise.css
   administrate/script.js
   administrate/overrides.css
+  pages/pages.css
 )

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <meta name="viewport" content="initial-scale=1" />
+  <title>Immunize</title>
+  <%= stylesheet_link_tag    'pages/pages', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'pages/pages', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="assets/js/rs-plugin/css/settings.css">
+  <%= javascript_include_tag 'pages/pages', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>
