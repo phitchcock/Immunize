@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">immunize</a>
+      <a class="navbar-brand" href="/">Immunize</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,7 +20,7 @@
           <li><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to "SIGN IN", new_user_session_path %></li>
-          <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+          <li><%#= link_to "SIGN UP", new_user_registration_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
