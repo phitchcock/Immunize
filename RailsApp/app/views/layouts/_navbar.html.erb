@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to "HOME", root_path %></li>
+          <li><%= link_to "LOCATIONS", locations_path %></li>
           <li><%= link_to "ADMIN", admin_root_path %></li>
           <li><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
         <% else %>
