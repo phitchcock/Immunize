@@ -38,8 +38,3 @@ https://github.com/phitchcock/Immunize/tree/master/RailsApp
 
 Setup iOS Application:
 https://github.com/phitchcock/Immunize/tree/master/iOSApp
-
-### Additional Information (optional)
-[Include any additional information that you would like the judges to know about your project]
-
-
