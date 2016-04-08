@@ -14,8 +14,9 @@
 //= require underscore
 //= require gmaps/google
 //= require slick.min
-//= require waypoints.min
 //= require placeholdem.min
+//= require waypoints.min
+
 //= require 'greensock/TweenLite'
 //= require 'greensock/easing/EasePack'
 //= require 'greensock/jquery.gsap.js'
@@ -26,6 +27,7 @@
 //= require_tree .
 
 $(document).ready (function(){
+  appMaster.preLoader();
   $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
     (".alert-dismissible").alert('close');
   });
