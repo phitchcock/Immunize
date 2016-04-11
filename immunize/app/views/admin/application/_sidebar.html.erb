@@ -18,4 +18,9 @@ as defined by the routes in the `admin/` namespace
     </li>
   <% end %>
   <br>
+  <li class=""><%= link_to "Map of Locations", locations_path, class: "li-a-class" %></li>
+  <br>
+  <li class=""><%= link_to 'Home Page', root_path, class: "li-a-class" %></li>
+  <br>
+  <li class=""><%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "li-a-class" %></li>
 </ul>
