@@ -12,10 +12,8 @@
 4. Jump on `localhost:3000` with your browser
 
 #### Rpush Setup
-Rpush documents: https://github.com/rpush/rpush/wiki
 1. Generate SSL Certificates https://github.com/rpush/rpush/wiki/Generating-Certificates
-2. Create Rpush App
-```
+2. Create Rpush App ```
 app = Rpush::Apns::App.new
 app.name = "iOSApp"
 app.certificate = File.read("/lib/certs/sandbox.pem")
@@ -25,6 +23,7 @@ app.connections = 1
 app.save!
 ```
 3. Running Rpush `rpush start`
+4. Rpush documents: https://github.com/rpush/rpush/wiki
 
 #### Info
 Landing Page: http://www.sacramentocounty.tech/
