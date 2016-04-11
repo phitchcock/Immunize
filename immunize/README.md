@@ -13,7 +13,8 @@
 
 #### Rpush Setup
 1. Generate SSL Certificates https://github.com/rpush/rpush/wiki/Generating-Certificates
-2. Create Rpush App ```
+2. Create Rpush App
+```
 app = Rpush::Apns::App.new
 app.name = "iOSApp"
 app.certificate = File.read("/lib/certs/sandbox.pem")
