@@ -7,8 +7,8 @@
       <h4 class="list-group-item-heading"><%=link_to location.name, location, remote: true, data: { toggle: "modal", target: "#myModal-#{location.id}" } %></h4>
       <p class="list-group-item-text"><%= location.street_number %> <%= location.street_name %></p>
       <p class="list-group-item-text"><%= location.city %>, <%= location.state %> <%= location.zip %></p>
-      <p class="list-group-item-text"><%#= location.date %></p>
-      <p class="list-group-item-text">From <%#= location.time %></p>
+      <p class="list-group-item-text"><%= location.date %></p>
+      <p class="list-group-item-text">From <%= location.time %></p>
     </span>
   </div>
 
