@@ -70,6 +70,8 @@ class LocationDashboard < Administrate::BaseDashboard
     :date,
     :time,
     :info,
+    :latitude,
+    :longitude,
     :image,
   ]
 
