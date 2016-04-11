@@ -27,7 +27,7 @@ app.save!
 4. Rpush documents: https://github.com/rpush/rpush/wiki
 
 #### Info
-Landing Page: http://www.sacramentocounty.tech/
-Clinic Locations: http://www.sacramentocounty.tech/locations
-Admin: http://www.sacramentocounty.tech/admin
-API Endpoint Locations: http://www.sacramentocounty.tech/api/v1/locations
+* Landing Page: http://www.sacramentocounty.tech/
+* Clinic Locations: http://www.sacramentocounty.tech/locations
+* Admin: http://www.sacramentocounty.tech/admin (please request access phitchcock@me.com)
+* API Endpoint Locations: http://www.sacramentocounty.tech/api/v1/locations

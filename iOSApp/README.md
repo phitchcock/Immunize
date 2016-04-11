@@ -1,4 +1,7 @@
 ## Developer Documentation
+#### App Store
+Immunize is live in the App Store:
+https://itunes.apple.com/us/app/immunize/id1094776022?mt=8
 
 #### Requirements
 * Xcode 7.3
