@@ -1,63 +1,33 @@
-# immunize
+## Developer Documentation
 
-Ruby on Rails Cloud Backend Server: https://sac-immunize.herokuapp.com
+#### Requirements
+* chruby
+* Ruby Version 2.3.0
+* Rails 4.2.5
 
-The Ruby on Rails cloud architecture is running on Heroku.
+#### Setup
+1. Download the repo
+2. Run `bundle install` or `bundle update`
+3. Start the rails server `rails s`
+4. Jump on `localhost:3000` with your browser
 
-![backend](https://cloud.githubusercontent.com/assets/2372619/13559322/df6edcce-e3c7-11e5-9356-e2510d7f2dac.png)
+#### Rpush Setup
+Rpush documents: https://github.com/rpush/rpush/wiki
+1. Generate SSL Certificates https://github.com/rpush/rpush/wiki/Generating-Certificates
+2. Create Rpush App
+```
+app = Rpush::Apns::App.new
+app.name = "iOSApp"
+app.certificate = File.read("/lib/certs/sandbox.pem")
+app.environment = "sandbox" # APNs environment.
+app.password = "certificate password"
+app.connections = 1
+app.save!
+```
+3. Running Rpush `rpush start`
 
-API Documentation
------------------
-
-##Understanding REST APIs
-This API follows RESTful standards related to routes and HTTP verbs. If you are unfamiliar with this you can learn more here: http://www.restapitutorial.com/lessons/httpmethods.html
-
-But the simple overview is that given a user with a path like /api/v1/locations then each of the following HTTP Verbs mean a specific thing:
-
-HTTP  | Verb |  CRUD Meaning
---- | --- | ---
-POST | Create | 201 (Created)
-GET |Read  |200 (OK)
-PUT |Update  |404 (Not Found)
-DELETE  | Delete | 204 (Success)
-
-**API Root:** https://sac-immunize.herokuapp.com
-
-Some examples use my local server: `http://localhost:3000` just change this to main API Root to test against real server.
-
-## Content-Type: JSON
-All requests and responses are in JSON - you should set the following content/type header to tell the server the request is in JSON.
-
-    curl -H "Content-Type: application/json"
-
-The response object will have this header:
-
-    Content-Type: application/json; charset=utf-8
-
-## Updating Objects
-
-Administration Page
--------------------
-
-The admin page is at https://sac-immunize.herokuapp.com/admin
-Authentication is handeled through Devise
-
-Architecture
-------------
-
-TODO
-------------
-Readme
-- update all
-
-Web Front End
-- show modal or show page
-- click on sidebar show map location with info
-- style login and register
-
-Web Admin
-- change date:string to date:date sort by date
-
-iOS App
-- finish info views
-- style list
+#### Info
+Landing Page: http://www.sacramentocounty.tech/
+Clinic Locations: http://www.sacramentocounty.tech/locations
+Admin: http://www.sacramentocounty.tech/admin
+API Endpoint Locations: http://www.sacramentocounty.tech/api/v1/locations
